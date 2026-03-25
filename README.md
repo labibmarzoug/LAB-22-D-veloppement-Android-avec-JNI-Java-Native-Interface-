@@ -197,6 +197,55 @@ Somme du tableau = 150
 
 <img width="1880" height="726" alt="image" src="https://github.com/user-attachments/assets/15ca8b31-4185-4d8d-9d92-809019b84b4f" />
 
+
+
+## Tests guidés des fonctions natives
+
+**Objectif :** Vérifier le comportement des fonctions natives JNI (`factorial`, `reverseString`, `sumArray`) avec différents scénarios.
+
+| Test | Fonction | Entrée | Résultat attendu | Commentaire |
+|------|---------|--------|-----------------|-------------|
+| 1 | `factorial` | `10` | `3628800` | Cas normal, factorielle positive |
+| 2 | `factorial` | `-5` | `-1` | Gestion des valeurs négatives |
+| 3 | `factorial` | `20` | `-2` | Dépassement d’entier (overflow) |
+| 4 | `reverseString` | `""` | `""` | Chaîne vide → résultat vide |
+| 5 | `sumArray` | `new int[]{}` | `0` | Tableau vide → somme = 0 |
+
+**Explications :**
+
+1. `factorial(10)` : calcul standard → 10! = 3628800.  
+2. `factorial(-5)` : valeur négative non valide → retourne -1.  
+3. `factorial(20)` : dépassement de la capacité `int` → retourne -2.  
+4. `reverseString("")` : inverser une chaîne vide reste vide.  
+5. `sumArray(new int[]{})` : somme d’un tableau vide → 0.  
+
+**Check :** Chaque test couvre un cas classique ou une situation limite, assurant la robustesse des méthodes natives.
+
+---
+
+## Annexes
+
+### Permissions demandées
+- `INTERNET`  
+- `ACCESS_NETWORK_STATE`  
+- `READ_EXTERNAL_STORAGE`
+
+### Composants exportés
+- `MainActivity`  
+- `NetworkService`  
+- `SyncReceiver`
+
+---
+
+## Résultats organisation fichiers
+- Fichiers JAR décompilés placés dans `./results`  
+- Rapport `rapport.md` sauvegardé dans `./results`  
+- Artefacts temporaires supprimés (DEX extraits, APK temporaire)
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/3a4c6e22-daba-418f-84b7-7ce8f8df267a" />
+
+<img width="1911" height="1077" alt="image" src="https://github.com/user-attachments/assets/71ccc452-e266-4a2e-bbca-1b878ae15090" />
+
 ---
 
 ## 12. Analyse des logs avec Logcat
