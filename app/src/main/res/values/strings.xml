@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">JNI Demo</string>
+
+    <!-- Default values for layout -->
+    <string name="hello_default">Waiting for JNI…</string>
+    <string name="factorial_default">Factorial result will appear here</string>
+    <string name="reverse_default">Reversed text will appear here</string>
+    <string name="sum_default">Array sum will appear here</string>
+
+    <!-- Format strings for Java -->
+    <string name="factorial_result">Factoriel de %1$d = %2$d</string>
+    <string name="reverse_result">Texte inversé : %1$s</string>
+    <string name="sum_result">Somme du tableau = %1$d</string>
+</resources>
